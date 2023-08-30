@@ -17,4 +17,9 @@ public class MainController {
 	public String root() {
 		return "redirect:/question/list";
 	}
+	
+	@GetMapping("/admin")
+	public String adminPage() {
+		return "admin_page";
+	}
 }

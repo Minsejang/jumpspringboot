@@ -39,7 +39,9 @@ public class UserSecurityService implements UserDetailsService {
 		// 사용자 이름이 "admin"인 경우 ADMIN 권한을 부여합니다.
 		if ("admin".equals(username)) {
 			authorities.add(new SimpleGrantedAuthority(UserRole.ADMIN.getValue()));
-		}
+		} else {
+            authorities.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
+        }
 		
 		// Spring Security에서 제공하는 User 객체를 생성하여 반환합니다.
 		// User 객체는 UserDetails 인터페이스를 구현한 클래스로, 사용자 정보와 권한 정보를 담고 있습니다.
